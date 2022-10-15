@@ -28,7 +28,7 @@
                                 <th>Penerbit</th>
                                 <th>Jumlah Halaman</th>
                                 <th>Jenis Buku</th>
-                                <th>Action</th>
+                                <th>Action </th>
                             </tr>
                         </thead>
                         <tbody>
