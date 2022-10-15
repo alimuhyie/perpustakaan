@@ -40,7 +40,7 @@
                                     <td><?= $a->tempatlahir; ?>, <?= $a->tanggallahir; ?></td>
                                     <td><?= $a->kelas; ?></td>
                                     <td><?= $a->alamat; ?></td>
-                                    <td><a href="<?= site_url('anggota/update/' . $a->id) ?>" class="btn btn-success btn-sm"><i class="fa fa-edit"></i> </a></td>
+                                    <td><a href="<?= site_url('anggota/update/' . $a->id); ?>" class="btn btn-success btn-sm"><i class="fa fa-edit"></i> </a></td>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>

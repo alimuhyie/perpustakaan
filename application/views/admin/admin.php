@@ -32,8 +32,7 @@
             <tbody>
               <?php
               $no = 1;
-              foreach ($user->result()
-                as $ad) : ?>
+              foreach ($user as $ad) : ?>
 
                 <tr>
                   <td><?= $no++; ?> </td>
@@ -41,7 +40,7 @@
                   <td><?= $ad->email; ?></td>
                   <td>
                     <a href="<?= base_url('Hapus-Data-Admin') ?>"><i class="btn btn-danger fas fa-trash-alt"></i></a>
-                    <a href=""><i class="btn btn-warning fas fa-edit"></i></a>
+                    <a href="<?= base_url('admin/edit/' . $ad->id); ?>"><i class="btn btn-warning fas fa-edit"></i></a>
                   </td>
 
                 </tr>

@@ -14,7 +14,7 @@ class Admin extends CI_Controller
 
     public function index()
     {
-        $data['user'] = $this->db->query('select * from user');
+        $data['user'] = $this->db->query('select * from user')->result();
         $data['admin'] = $this->Session_model->session();
         $data['judul'] = 'Admin';
         $this->load->view('templates/header', $data);
@@ -56,6 +56,16 @@ class Admin extends CI_Controller
             Registrasi berhasil, Admin telah ditambahkan.</div>');
             redirect('Admin');
         }
+    }
+
+    public function edit($id)
+    {
+        $data['user'] = $this->db->get_where('user', ['id' => $id])->row();
+        $data['admin'] = $this->Session_model->session();
+        $data['judul'] = 'Admin';
+        $this->load->view('templates/header', $data);
+        $this->load->view('admin/lihatdata', $data);
+        $this->load->view('templates/footer');
     }
 }
 
