@@ -102,12 +102,25 @@ class Anggota extends CI_Controller
             Data berhasil diupdate.</div>');
             redirect('Anggota');
         } else {
-            $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible">
+            $this->session->set_flashdata('pesan', '<div class="alert alert-danger alert-dismissible">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
             <h5><i class="icon fas fa-check"></i> Pesan!</h5>
             data tidak berubah</div>');
             redirect('Anggota');
         }
+    }
+
+    public function delete()
+    {
+        $id = $this->uri->segment(3);
+
+        $this->db->where('id', $id);
+        $this->db->delete('anggota');
+        $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <h5><i class="icon fas fa-check"></i> Pesan!</h5>
+            Data Telah dihapus</div>');
+        redirect('Anggota');
     }
 }
 

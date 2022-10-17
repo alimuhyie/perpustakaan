@@ -8,10 +8,10 @@
                             <h3 class="card-title">Daftar <?= $judul; ?></h3>
                         </div>
                         <div class="col-lg-2 ml-auto">
-                            <a href="<?= base_url('Tambah-Anggota'); ?>" type="button">
+                            <a href="<?= base_url('Tambah-Buku'); ?>" type="button">
                                 <span>
                                     <i class="fas fa-plus ml-1"> </i>
-                                    Tambah Anggota
+                                    Tambah Buku
                                 </span>
                             </a>
                         </div>
@@ -24,24 +24,26 @@
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Nama</th>
-                                <th>Tempat & Tanggal Lahir</th>
-                                <th>Kelas</th>
-                                <th>alamat</th>
-                                <th>Action</th>
+                                <th>Nama Peminjam</th>
+                                <th>Kelas Peminjam</th>
+                                <th>Buku</th>
+                                <th>Jumlah Buku pinjaman</th>
+                                <th>lama pinjaman</th>
+                                <th>Action </th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php $no = 1;
-                            foreach ($anggota as $a) : ?>
+                            foreach ($pinjam as $a) : ?>
                                 <tr>
                                     <td><?= $no++; ?></td>
                                     <td><?= $a->nama; ?></td>
-                                    <td><?= $a->tempatlahir; ?>, <?= $a->tanggallahir; ?></td>
                                     <td><?= $a->kelas; ?></td>
-                                    <td><?= $a->alamat; ?></td>
-                                    <td><a href="<?= site_url('anggota/update/' . $a->id); ?>" class="btn btn-warning"><i class="fa fa-edit"></i> </a>
-                                        <a href="<?= base_url('anggota/delete/' . $a->id) ?>"><i class="btn btn-danger fas fa-trash-alt"></i></a>
+                                    <td><?= $a->namabuku; ?></td>
+                                    <td><?= $a->jumlahbuku; ?></td>
+                                    <td><?= $a->lamapinjam; ?> Hari</td>
+                                    <td><a href="<?= site_url('buku/edit/' . $a->id) ?>" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i> </a>
+                                        <a href="<?= site_url('buku/delete/' . $a->id) ?>" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>

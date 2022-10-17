@@ -65,6 +65,8 @@ $route['Katalog-Buku'] = 'buku';
 $route['Tambah-Buku'] = 'buku/tambah';
 $route['Update-Buku'] = 'buku/update';
 
+$route['Peminjaman'] = 'pinjam';
+
 
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

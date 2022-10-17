@@ -111,7 +111,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="<?= base_url('Katalog-Buku');?>" class="nav-link">
+              <a href="<?= base_url('Katalog-Buku'); ?>" class="nav-link">
                 <i class="nav-icon fas fa-book"></i>
                 <p>
                   Katalog Buku
@@ -120,7 +120,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="../widgets.html" class="nav-link">
+              <a href="<?= base_url('Peminjaman'); ?>" class="nav-link">
                 <i class="nav-icon fas fa-file-invoice"></i>
                 Transaksi Buku
                 <span class="right badge badge-danger">New</span>
