@@ -67,6 +67,19 @@ class Admin extends CI_Controller
         $this->load->view('admin/lihatdata', $data);
         $this->load->view('templates/footer');
     }
+
+    public function delete()
+    {
+        $id = $this->uri->segment(3);
+
+        $this->db->where('id', $id);
+        $this->db->delete('user');
+        $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <h5><i class="icon fas fa-check"></i> Pesan!</h5>
+            Data Admin telah dihapus.</div>');
+        redirect('Admin');
+    }
 }
 
 /* End of file Admin.php */

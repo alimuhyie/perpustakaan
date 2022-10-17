@@ -55,6 +55,7 @@ $route['Dashboard'] = 'dashboard';
 
 $route['Admin'] = 'admin';
 $route['Tambah-Admin'] = 'admin/tambah';
+$route['Hapus-Admin'] = 'admin/delete';
 
 $route['Anggota'] = 'anggota';
 $route['Tambah-Anggota'] = 'anggota/tambah';
@@ -62,6 +63,7 @@ $route['Update-Anggota'] = 'anggota/edit';
 
 $route['Katalog-Buku'] = 'buku';
 $route['Tambah-Buku'] = 'buku/tambah';
+$route['Update-Buku'] = 'buku/update';
 
 
 $route['404_override'] = '';

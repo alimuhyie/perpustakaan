@@ -31,7 +31,7 @@ class Buku extends CI_Controller
 
 
         $this->form_validation->set_rules('nama', 'Nama', 'trim|required');
-        $this->form_validation->set_rules('halaman', 'Halaman', 'trim|required');
+        $this->form_validation->set_rules('jumlahbuku', 'jumlahbuku', 'trim|required');
         $this->form_validation->set_rules('penerbit', 'Penerbit', 'trim|required');
         $this->form_validation->set_rules('jenisbuku', 'Jenis Buku', 'trim|required');
 
@@ -43,7 +43,7 @@ class Buku extends CI_Controller
         } else {
             $buku = [
                 'nama' => $this->input->post('nama'),
-                'halaman' => $this->input->post('halaman'),
+                'jumlahbuku' => $this->input->post('jumlahbuku'),
                 'penerbit' => $this->input->post('penerbit'),
                 'jenisbuku' => $this->input->post('jenisbuku'),
             ];
@@ -53,6 +53,52 @@ class Buku extends CI_Controller
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
             <h5><i class="icon fas fa-check"></i> Pesan!</h5>
             Data berhasil, Admin telah ditambahkan.</div>');
+            redirect('Buku');
+        }
+    }
+
+    public function edit($id)
+    {
+        $data['judul'] = 'Katalog Buku';
+        $data['admin'] = $this->Session_model->session();
+        $data['buku'] = $this->db->get_where('buku', ['id' => $id])->row();
+
+
+        $this->load->view('templates/header', $data);
+        $this->load->view('buku/edit', $data);
+        $this->load->view('templates/footer');
+    }
+
+    public function update()
+    {
+        $data['judul'] = 'Katalog Buku';
+        $data['admin'] = $this->Session_model->session();
+
+        $this->form_validation->set_rules('nama', 'Nama', 'trim|required');
+        $this->form_validation->set_rules('jumlahbuku', 'jumlahbuku', 'trim|required');
+        $this->form_validation->set_rules('penerbit', 'Penerbit', 'trim|required');
+        $this->form_validation->set_rules('jenisbuku', 'Jenis Buku', 'trim|required');
+
+        if ($this->form_validation->run() == FALSE) {
+
+            $this->load->view('templates/header', $data);
+            $this->load->view('buku/edit', $data);
+            $this->load->view('templates/footer');
+        } else {
+            $id = $this->input->post('id');
+            $update = [
+                'nama' => $this->input->post('nama'),
+                'penerbit' => $this->input->post('penerbit'),
+                'jumlahbuku' => $this->input->post('jumlahbuku'),
+                'jenisbuku' => $this->input->post('jenisbuku'),
+            ];
+
+            $this->db->where('id', $id);
+            $this->db->update('buku', $update);
+            $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <h5><i class="icon fas fa-check"></i> Pesan!</h5>
+            Data berhasil di Update, Admin telah ditambahkan.</div>');
             redirect('Buku');
         }
     }

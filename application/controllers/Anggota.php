@@ -84,9 +84,7 @@ class Anggota extends CI_Controller
         $this->form_validation->set_rules('alamat', 'alamat', 'trim|required');
 
 
-        if ($this->form_validation->run() == FALSE) {
-            # code...
-        } else {
+        if ($this->form_validation->run() == TRUE) {
             $id = $this->input->post('id');
             $update = [
                 'nama' => $this->input->post('nama'),
@@ -102,6 +100,12 @@ class Anggota extends CI_Controller
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
             <h5><i class="icon fas fa-check"></i> Pesan!</h5>
             Data berhasil diupdate.</div>');
+            redirect('Anggota');
+        } else {
+            $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <h5><i class="icon fas fa-check"></i> Pesan!</h5>
+            data tidak berubah</div>');
             redirect('Anggota');
         }
     }

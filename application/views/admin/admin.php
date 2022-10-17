@@ -39,8 +39,8 @@
                   <td><?= $ad->name; ?></td>
                   <td><?= $ad->email; ?></td>
                   <td>
-                    <a href="<?= base_url('Hapus-Data-Admin') ?>"><i class="btn btn-danger fas fa-trash-alt"></i></a>
                     <a href="<?= base_url('admin/edit/' . $ad->id); ?>"><i class="btn btn-warning fas fa-edit"></i></a>
+                    <a href="<?= base_url('admin/delete/' . $ad->id) ?>"><i class="btn btn-danger fas fa-trash-alt"></i></a>
                   </td>
 
                 </tr>

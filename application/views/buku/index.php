@@ -24,10 +24,10 @@
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Nama BUku</th>
+                                <th>Nama Buku</th>
                                 <th>Penerbit</th>
-                                <th>Jumlah Halaman</th>
                                 <th>Jenis Buku</th>
+                                <th>Jumlah Buku</th>
                                 <th>Action </th>
                             </tr>
                         </thead>
@@ -38,9 +38,11 @@
                                     <td><?= $no++; ?></td>
                                     <td><?= $a->nama; ?></td>
                                     <td><?= $a->penerbit; ?></td>
-                                    <td><?= $a->halaman; ?></td>
                                     <td><?= $a->jenisbuku; ?></td>
-                                    <td><a href="<?= site_url('buku/update/' . $a->id) ?>" class="btn btn-success btn-sm"><i class="fa fa-edit"></i> </a></td>
+                                    <td><?= $a->jumlahbuku; ?></td>
+                                    <td><a href="<?= site_url('buku/edit/' . $a->id) ?>" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i> </a>
+                                        <a href="<?= site_url('buku/delete/' . $a->id) ?>" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i>
+                                    </td>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>
