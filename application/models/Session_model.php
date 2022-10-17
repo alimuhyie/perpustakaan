@@ -7,7 +7,14 @@ class Session_model extends CI_Model
 
     public function session()
     {
-        $query = $this->db->get_where('user', ['email' => $this->session->userdata('email')]);
+        $sesi =
+            $this->session->userdata('email');
+
+        $query = $this->db->query("SELECT users.*, user_role.`user_role`
+                FROM users
+                JOIN user_role 
+                where users.`role_id` = user_role.`id`
+                AND users.`email` = '$sesi'");
         return $query->row_array();
     }
 }

@@ -36,7 +36,7 @@
 
                 <tr>
                   <td><?= $no++; ?> </td>
-                  <td><?= $ad->name; ?></td>
+                  <td><?= $ad->nama; ?></td>
                   <td><?= $ad->email; ?></td>
                   <td>
                     <a href="<?= base_url('admin/edit/' . $ad->id); ?>"><i class="btn btn-warning fas fa-edit"></i></a>

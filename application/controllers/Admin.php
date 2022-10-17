@@ -14,7 +14,7 @@ class Admin extends CI_Controller
 
     public function index()
     {
-        $data['user'] = $this->db->query('select * from user')->result();
+        $data['user'] = $this->db->query('select * from users')->result();
         $data['admin'] = $this->Session_model->session();
         $data['judul'] = 'Admin';
         $this->load->view('templates/header', $data);
@@ -24,7 +24,10 @@ class Admin extends CI_Controller
 
     public function tambah()
     {
-        $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|is_unique[user.email]', [
+
+        $data['admin'] = $this->Session_model->session();
+
+        $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|is_unique[users.email]', [
             'is_unique' => 'this email has been registered!'
         ]);
         $this->form_validation->set_rules('nama', 'Nama', 'trim|required');
@@ -39,17 +42,19 @@ class Admin extends CI_Controller
             $this->load->view('templates/footer');
         } else {
 
-            $data = [
-                'name' => htmlspecialchars($this->input->post('nama', true)),
+            $anggota = [
+                'nama' => htmlspecialchars($this->input->post('nama', true)),
                 'email' => htmlspecialchars($this->input->post('email', true)),
                 'password' => password_hash($this->input->post('password'), PASSWORD_DEFAULT),
                 'image' => 'default.jpg',
                 'is_active' => '1',
-                'role_id' => '1',
+                'role_id' => $this->input->post('role_id'),
                 'date_created' => time()
             ];
 
-            $this->db->insert('user', $data);
+
+
+            $this->db->insert('users', $anggota);
             $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
             <h5><i class="icon fas fa-check"></i> Pesan!</h5>
@@ -60,7 +65,7 @@ class Admin extends CI_Controller
 
     public function edit($id)
     {
-        $data['user'] = $this->db->get_where('user', ['id' => $id])->row();
+        $data['user'] = $this->db->get_where('users', ['id' => $id])->row();
         $data['admin'] = $this->Session_model->session();
         $data['judul'] = 'Admin';
         $this->load->view('templates/header', $data);
@@ -73,7 +78,7 @@ class Admin extends CI_Controller
         $id = $this->uri->segment(3);
 
         $this->db->where('id', $id);
-        $this->db->delete('user');
+        $this->db->delete('users');
         $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
             <h5><i class="icon fas fa-check"></i> Pesan!</h5>

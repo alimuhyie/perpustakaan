@@ -20,7 +20,7 @@
                 <div class="form-group row">
                     <label for="nama" class="col-sm-2 col-form-label">Nama</label>
                     <div class="col-sm-10">
-                        <input type="text" name="nama" class="form-control" id="nama" placeholder="Nama Lengkap" value="<?= $user->name; ?>">
+                        <input type="text" name="nama" class="form-control" id="nama" placeholder="Nama Lengkap" value="<?= $user->nama; ?>">
                         <?= form_error('nama', '<small class="text-danger">', '</small>'); ?>
                     </div>
                 </div>

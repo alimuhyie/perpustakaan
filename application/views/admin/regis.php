@@ -7,7 +7,7 @@
         </div>
         <!-- /.card-header -->
         <!-- form start -->
-        <form method="POST" action="<?= base_url('Admin/tambah'); ?>">
+        <form method="POST" action="<?= base_url('Tambah-Admin'); ?>">
             <div class="card-body">
                 <div class="form-group row">
                     <label for="email" class="col-sm-2 col-form-label">Email</label>
@@ -29,6 +29,13 @@
                         <input type="password" name="password" class="form-control" id="password" placeholder="Password">
                         <?= form_error('password', '<small class="text-danger">', '</small>'); ?>
                     </div>
+                </div>
+                <div class="form-group">
+                    <label>Level</label>
+                    <select name="role_id" class="form-control" required="required">
+                        <option value="1">Admin Perpustakaan</option>
+                        <option value="2">Anggota</option>
+                    </select>
                 </div>
             </div>
             <!-- /.card-body -->
