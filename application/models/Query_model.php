@@ -8,7 +8,7 @@ class Query_model extends CI_Model
 
     public function pinjam()
     {
-        $data = $this->db->query('SELECT pinjam.`id`,pinjam.`lamapinjam`, anggota.`nama`, anggota.`kelas`, buku.`nama` AS namabuku , buku.`jumlahbuku`
+        $data = $this->db->query('SELECT pinjam.`tglpinjam`, pinjam.`jmlbuku`, pinjam.`id`,pinjam.`lamapinjam`, anggota.`nama`, anggota.`kelas`, buku.`nama` AS namabuku , buku.`jumlahbuku`
         FROM pinjam
         JOIN anggota
         ON  pinjam.`id_peminjam` = anggota.`id` 

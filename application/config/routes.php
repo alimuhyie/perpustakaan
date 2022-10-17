@@ -66,6 +66,7 @@ $route['Tambah-Buku'] = 'buku/tambah';
 $route['Update-Buku'] = 'buku/update';
 
 $route['Peminjaman'] = 'pinjam';
+$route['Pinjam-Buku'] = 'pinjam/pinjam';
 
 
 $route['404_override'] = '';
