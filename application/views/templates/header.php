@@ -96,10 +96,10 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="<?= base_url('admin') ?>" class="nav-link">
+              <a href="<?= base_url('Anggota') ?>" class="nav-link">
                 <i class="nav-icon fas fa-users-cog"></i>
                 <p>
-                  Admin
+                  Anggota
                 </p>
               </a>
             </li>
@@ -139,9 +139,9 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="../layout/top-nav.html" class="nav-link">
+                  <a href="<?= base_url('Peminjaman'); ?>" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Top Navigation</p>
+                    <p>Peminjaman</p>
                   </a>
                 </li>
                 <li class="nav-item">

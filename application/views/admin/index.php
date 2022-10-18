@@ -4,7 +4,9 @@
       <span class="info-box-icon bg-success"><i class="fas fa-users"></i></span>
       <div class="info-box-content">
         <span class="info-box-text">Anggota</span>
-        <span class="info-box-number">410</span>
+        <?php $jumlah = $this->db->query('SELECT COUNT(*) AS jumlah_anggota FROM users');
+        return $jumlah; ?>
+        <span class="info-box-number"><?= $jumlah; ?></span>
       </div>
       <!-- /.info-box-content -->
     </div>

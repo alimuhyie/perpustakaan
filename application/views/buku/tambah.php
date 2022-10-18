@@ -17,6 +17,13 @@
                     </div>
                 </div>
                 <div class="form-group row">
+                    <label for="isbn" class="col-sm-2 col-form-label">ISBN</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="isbn" class="form-control" id="isbn" placeholder="ISBN" value="<?= set_value('isbn') ?>">
+                        <?= form_error('isbn', '<small class="text-danger">', '</small>'); ?>
+                    </div>
+                </div>
+                <div class="form-group row">
                     <label for="penerbit" class="col-sm-2 col-form-label">Penerbit</label>
                     <div class="col-sm-10">
                         <input type="text" name="penerbit" class="form-control" id="penerbit" placeholder="Penerbit" value="<?= set_value('penerbit') ?>">
@@ -33,7 +40,7 @@
                 <div class="form-group row">
                     <label for="jenisbuku" class="col-sm-2 col-form-label">Jenis Buku</label>
                     <div class="col-sm-10">
-                        <input type="text" name="jenisbuku" class="form-control" id="kelas" placeholder="jenis buku (Cerita)" value="<?= set_value('jenisbuku') ?>">
+                        <input type="text" name="jenisbuku" class="form-control" id="kelas" placeholder="Contoh: Cerita" value="<?= set_value('jenisbuku') ?>">
                         <?= form_error('jenisbuku', '<small class="text-danger">', '</small>'); ?>
                     </div>
                 </div>

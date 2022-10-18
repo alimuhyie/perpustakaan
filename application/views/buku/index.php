@@ -25,6 +25,7 @@
                             <tr>
                                 <th>No</th>
                                 <th>Nama Buku</th>
+                                <th>ISBN Buku</th>
                                 <th>Penerbit</th>
                                 <th>Jenis Buku</th>
                                 <th>Jumlah Buku</th>
@@ -37,6 +38,7 @@
                                 <tr>
                                     <td><?= $no++; ?></td>
                                     <td><?= $a->nama; ?></td>
+                                    <td><?= $a->isbn; ?></td>
                                     <td><?= $a->penerbit; ?></td>
                                     <td><?= $a->jenisbuku; ?></td>
                                     <td><?= $a->jumlahbuku; ?></td>

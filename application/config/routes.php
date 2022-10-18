@@ -53,13 +53,13 @@ $route['default_controller'] = 'auth';
 $route['Logout'] = 'auth/logout';
 $route['Dashboard'] = 'dashboard';
 
-$route['Admin'] = 'admin';
-$route['Tambah-Admin'] = 'admin/tambah';
-$route['Hapus-Admin'] = 'admin/delete';
-
 $route['Anggota'] = 'anggota';
 $route['Tambah-Anggota'] = 'anggota/tambah';
-$route['Update-Anggota'] = 'anggota/edit';
+$route['Hapus-Anggota'] = 'anggota/delete';
+
+// $route['Anggota'] = 'anggota';
+// $route['Tambah-Anggota'] = 'anggota/tambah';
+// $route['Update-Anggota'] = 'anggota/edit';
 
 $route['Katalog-Buku'] = 'buku';
 $route['Tambah-Buku'] = 'buku/tambah';

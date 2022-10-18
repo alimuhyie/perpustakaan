@@ -13,7 +13,7 @@
                     <label for="nama" class="col-sm-2 col-form-label">Buku</label>
                     <div class="col-sm-10">
                         <input type="text" name="nama" class="form-control" id="nama" placeholder="Nama Buku" value="<?= $buku->nama; ?>">
-                        <input readonly type="text" name="id" class="form-control" id="id" placeholder="id Buku" value="<?= $buku->id; ?>">
+                        <input readonly type="hidden" name="id" class="form-control" id="id" placeholder="id Buku" value="<?= $buku->id; ?>">
                         <?= form_error('nama', '<small class="text-danger">', '</small>'); ?>
                     </div>
                 </div>
@@ -21,11 +21,18 @@
                     <label for="penerbit" class="col-sm-2 col-form-label">Penerbit</label>
                     <div class="col-sm-10">
                         <input type="text" name="penerbit" class="form-control" id="penerbit" placeholder="Penerbit" value="<?= $buku->penerbit; ?>">
-                        <?= form_error('kelas', '<small class="text-danger">', '</small>'); ?>
+                        <?= form_error('penerbit', '<small class="text-danger">', '</small>'); ?>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="buku" class="col-sm-2 col-form-label">Jumlah buku</label>
+                    <label for="isbn" class="col-sm-2 col-form-label">ISBN Buku</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="isbn" class="form-control" id="isbn" placeholder="isbn" value="<?= $buku->isbn; ?>">
+                        <?= form_error('isbn', '<small class="text-danger">', '</small>'); ?>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="buku" class="col-sm-2 col-form-label">Jumlah Buku</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" name="jumlahbuku" id="jumlahbuku" placeholder="Jumlah buku" value="<?= $buku->jumlahbuku; ?>">
                         <?= form_error('jumlahbuku', '<small class="text-danger">', '</small>'); ?>

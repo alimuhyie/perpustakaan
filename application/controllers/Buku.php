@@ -34,6 +34,7 @@ class Buku extends CI_Controller
         $this->form_validation->set_rules('jumlahbuku', 'jumlahbuku', 'trim|required');
         $this->form_validation->set_rules('penerbit', 'Penerbit', 'trim|required');
         $this->form_validation->set_rules('jenisbuku', 'Jenis Buku', 'trim|required');
+        $this->form_validation->set_rules('isbn', 'ISBN Buku', 'trim|required');
 
         if ($this->form_validation->run() == FALSE) {
 
@@ -46,6 +47,7 @@ class Buku extends CI_Controller
                 'jumlahbuku' => $this->input->post('jumlahbuku'),
                 'penerbit' => $this->input->post('penerbit'),
                 'jenisbuku' => $this->input->post('jenisbuku'),
+                'isbn' => $this->input->post('isbn'),
             ];
 
             $this->db->insert('buku', $buku);
@@ -101,5 +103,18 @@ class Buku extends CI_Controller
             Data berhasil di Update, Admin telah ditambahkan.</div>');
             redirect('Buku');
         }
+    }
+
+    public function delete($id)
+    {
+        // $id = $this->uri->segment(3);
+
+        $this->db->where('id', $id);
+        $this->db->delete('buku');
+        $this->session->set_flashdata('pesan', '<div class="alert alert-success alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+            <h5><i class="icon fas fa-check"></i> Pesan!</h5>
+            Buku telah dihapus.</div>');
+        redirect('Buku');
     }
 }

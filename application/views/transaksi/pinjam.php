@@ -26,7 +26,7 @@
                 <div class="form-group row">
                     <label for="pinjam" class="col-sm-2 col-form-label">lama pinjam</label>
                     <div class="col-sm-5">
-                        <input type="text" class="form-control" name="lamapinjam" id="lamapinjam" placeholder="lama pinjam" value="<?= set_value('lamapinjam') ?>">
+                        <input type="number" class="form-control" name="lamapinjam" id="lamapinjam" placeholder="lama pinjam" value="<?= set_value('lamapinjam') ?>">
                         <?= form_error('lamapinjam', '<small class="text-danger">', '</small>'); ?>
                     </div>
                 </div>

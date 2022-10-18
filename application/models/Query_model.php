@@ -15,6 +15,15 @@ class Query_model extends CI_Model
         JOIN buku ON pinjam.`id_buku` = buku.`id`');
         return $data;
     }
+
+    public function kartu()
+    {
+        $anggota = $this->db->query("SELECT users.*, user_role.`user_role` AS status_anggota
+                    FROM users
+                    JOIN user_role 
+                    ON users.`role_id` = user_role.`id`");
+        return $anggota;
+    }
 }
 
 /* End of file Query_model.php */
