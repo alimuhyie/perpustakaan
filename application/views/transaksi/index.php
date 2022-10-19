@@ -44,8 +44,8 @@
                                     <td><?= $a->jmlbuku; ?></td>
                                     <td><?= $a->tglpinjam; ?></td>
                                     <td><?= $a->lamapinjam; ?> Hari</td>
-                                    <td><a href="<?= site_url('buku/edit/' . $a->id) ?>" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i> </a>
-                                        <a href="<?= site_url('buku/delete/' . $a->id) ?>" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i>
+                                    <td><a href="<?= site_url('pinjam/edit/' . $a->id) ?>" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i> </a>
+                                        <a href="<?= site_url('pinjam/delete/' . $a->id) ?>" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>

@@ -47,8 +47,9 @@ class Anggota extends CI_Controller
             $this->load->view('admin/regis');
             $this->load->view('templates/footer');
         } else {
-
+            $id =  $this->Query_model->buat_id('users', 'AG', 'id', 'ORDER BY id DESC LIMIT 1');
             $anggota = [
+                'id_anggota' => $id,
                 'nama' => htmlspecialchars($this->input->post('nama', true)),
                 'email' => htmlspecialchars($this->input->post('email', true)),
                 'alamat' => htmlspecialchars($this->input->post('alamat', true)),

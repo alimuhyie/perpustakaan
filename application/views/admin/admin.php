@@ -24,6 +24,7 @@
             <thead>
               <tr>
                 <th>No</th>
+                <th>ID Anggota</th>
                 <th>Nama</th>
                 <th>Email</th>
                 <th>JK</th>
@@ -40,6 +41,7 @@
 
                 <tr>
                   <td><?= $no++; ?> </td>
+                  <td><?= $ad->id_anggota; ?> </td>
                   <td><?= $ad->nama; ?></td>
                   <td><?= $ad->email; ?></td>
                   <td><?= $ad->jk; ?></td>

@@ -25,9 +25,9 @@ class Pinjam extends CI_Controller
         $this->load->view('templates/footer');
     }
 
-    public function pinjam()
+    public function tambah()
     {
-        $data['judul'] = 'Peminjaman Buku';
+        $data['judul'] = 'Tambah Pinjam Buku';
         $data['admin'] = $this->Session_model->session();
         // $data['pinjam'] = $this->Query_model->pinjam()->result();
 

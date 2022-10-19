@@ -4,9 +4,7 @@
       <span class="info-box-icon bg-success"><i class="fas fa-users"></i></span>
       <div class="info-box-content">
         <span class="info-box-text">Anggota</span>
-        <?php $jumlah = $this->db->query('SELECT COUNT(*) AS jumlah_anggota FROM users');
-        return $jumlah; ?>
-        <span class="info-box-number"><?= $jumlah; ?></span>
+        <span class="info-box-number"><?= $jum_anggota; ?></span>
       </div>
       <!-- /.info-box-content -->
     </div>
@@ -18,7 +16,7 @@
       <span class="info-box-icon bg-info"><i class="fas fa-book"></i></span>
       <div class="info-box-content">
         <span class="info-box-text">Buku</span>
-        <span class="info-box-number">1,410</span>
+        <span class="info-box-number"><?= $jum_buku; ?></span>
       </div>
       <!-- /.info-box-content -->
     </div>
@@ -31,7 +29,7 @@
 
       <div class="info-box-content">
         <span class="info-box-text">Peminjaman</span>
-        <span class="info-box-number">13,648</span>
+        <span class="info-box-number"><?= $jum_pinjam; ?></span>
       </div>
       <!-- /.info-box-content -->
     </div>

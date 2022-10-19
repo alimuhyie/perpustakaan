@@ -13,9 +13,10 @@ class Dashboard extends CI_Controller
     public function index()
     {
         $data['admin'] = $this->Session_model->session();
-        $data['jumlah_anggota'] = $this->db->query("SELECT COUNT(*) AS jumlah_angg FROM users");
-        var_dump($data['jumlah_anggota']);
-        die;
+        $data['jum_anggota'] = $this->db->get('users')->num_rows();
+        $data['jum_buku'] = $this->db->get('buku')->num_rows();
+        $data['jum_pinjam'] = $this->db->get('pinjam')->num_rows();
+
         $data['judul'] = 'Dashboard';
 
         $this->load->view('templates/header', $data);
